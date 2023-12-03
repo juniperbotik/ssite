@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
-      background-color: #f0f0f0;
+      background-color: #888; /* измените цвет фона на серый, например, #888 */
     }
 
     .spinner {
@@ -25,7 +26,7 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: #ff0000;
+      background: #fff; /* измените цвет загрузки на белый, например, #fff */
       border-radius: 50%;
       animation: spinner-vse6n7 1s infinite ease;
     }
@@ -61,8 +62,15 @@
         transform: rotate(360deg);
       }
     }
+
+    /* Добавляем стили для анимации исчезания */
+    .hidden {
+      opacity: 0;
+      transition: opacity 1s ease-out;
+    }
   </style>
 </head>
+
 <body>
   <div class="spinner">
     <div></div>
@@ -72,7 +80,11 @@
   </div>
 
   <script>
-    console.log("Hello World");
+    // Добавляем скрипт для изменения видимости через 5 секунд
+    setTimeout(function () {
+      var spinner = document.querySelector('.spinner');
+      spinner.classList.add('hidden');
+    }, 5000);
   </script>
 </body>
 </html>
